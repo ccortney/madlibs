@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block choice %} 
+<h1>Choose a madlib to start your journey!</h1>
+<form action="/form">
+    {% for story in stories %}
+        <input type="radio" name=story_id id={{story.title}} value="{{story.title}}">
+        <label for="{{story.title}}">{{story.title}}</label><br>
+    {% endfor %}
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}
